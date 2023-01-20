@@ -1,26 +1,40 @@
 {
     "$schema": "https://purl.org/csv-cubed/qube-config/v1",
     "title": "Covid Infection Survey Data",
-    "description": "The number and proportion of the population estimated to have tested positive for COVID-19 in areas across the UK for given weeks during the year.",
+    "summary": "The number and proportion of the population estimated to have tested positive for COVID-19 in England from 2020-2022.",
+    "description": "Modelled estimates of the population to have testest positive for COVID-19 are reported as part of the COVID Infection Survey (CIS). The CIS is a study to accurately model the UK's incidence of positive Covid infections across various breakdowns including region, age, and gender. Modelled estimates are reported as a percentage of the population as well as the number of people who are estimated to have tested postive for COVID-19",
     "creator": "https://www.gov.uk/government/organisations/office-for-national-statistics",
     "publisher": "https://www.gov.uk/government/organisations/office-for-national-statistics",
+    "dataset_issued": "2023-01-13",
     "columns": {
         "week": {
             "from_template": "week"
         },
         "ons_geog_code": {
             "type": "dimension",
-            "label": "Geography"
+            "label": "ons_geog_code",
+            "code_list": {
+                "title": "ons_geog_code",
+                "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+                "concepts": [
+                    {
+                        "label": "E92000001",
+                        "notation": "E92000001",
+                        "same_as": "http://statistics.data.gov.uk/id/statistical-geography/E92000001"
+                    }
+                ]
+            }
         },
         "percentage_pop_est": {
             "type": "observations",
             "data_type": "decimal",
             "unit": {
                 "label": "Percent",
-                "from_existing": "http://qudt.org/vocab/unit/PERCENT" 
+                "from_existing": "http://qudt.org/vocab/unit/PERCENT", 
+                "quantity_kind": "http://qudt.org/vocab/quantitykind/Incidence"
             },
             "measure": {
-                "label": "Estimated average % of the population testing positive for COVID-19"
+                "label": "Modelled estimate percentage of the population testing positive for COVID-19"
             }
         },
         "percentage_pop_est_lci": {
@@ -28,10 +42,11 @@
             "data_type": "decimal",
             "unit": {
                 "label": "Percent",
-                "from_existing": "http://qudt.org/vocab/unit/PERCENT"
+                "from_existing": "http://qudt.org/vocab/unit/PERCENT",
+                "quantity_kind": "http://qudt.org/vocab/quantitykind/Incidence"
             },
             "measure": {
-                "label": "95% Lower confidence/credible interval for percentage"
+                "label": "95% Lower credible interval for modelled estimate percentage of the population testing positive for COVID-19"
             }
         },
         "percentage_pop_est_uci": {
@@ -39,10 +54,11 @@
             "data_type": "decimal",
             "unit": {
                 "label": "Percent",
-                "from_existing": "http://qudt.org/vocab/unit/PERCENT"
+                "from_existing": "http://qudt.org/vocab/unit/PERCENT",
+                "quantity_kind": "http://qudt.org/vocab/quantitykind/Incidence"
             },
             "measure": {
-                "label": "95% Upper confidence/credible interval for percentage"
+                "label": "95% Upper credible interval for modelled estimate percentage of the population testing positive for COVID-19"
             }
         },
         "pop_est": {
@@ -50,10 +66,11 @@
             "data_type": "int",
             "unit": {
                 "label": "Number",
-                "from_existing": "http://qudt.org/vocab/unit/NUM"
+                "from_existing": "http://qudt.org/vocab/unit/NUM",
+                "quantity_kind": "http://qudt.org/vocab/quantitykind/Population"
             },
             "measure": {
-                "label": "Estimated average number of people testing positive for COVID-19"
+                "label": "Modelled estimate of the number of people testing positive for COVID-19"
             }
         },
         "pop_est_lci": {
@@ -61,10 +78,11 @@
             "data_type": "int",
             "unit": {
                 "label": "Number",
-                "from_existing": "http://qudt.org/vocab/unit/NUM"
+                "from_existing": "http://qudt.org/vocab/unit/NUM",
+                "quantity_kind": "http://qudt.org/vocab/quantitykind/Population"
             },
             "measure": {
-                "label": "95% Lower confidence/credible interval for number"
+                "label": "95% Lower credible interval for modelled estimate of the number of people testing positive for COVID-19"
             }
         },
         "pop_est_uci": {
@@ -72,10 +90,12 @@
             "data_type": "int",
             "unit": {
                 "label": "Number",
-                "from_existing": "http://qudt.org/vocab/unit/NUM"
+                "from_existing": "http://qudt.org/vocab/unit/NUM",
+                "quantity_kind": "http://qudt.org/vocab/quantitykind/Population"
             },
             "measure": {
-                "label": "95% Upper confidence/credible interval for number"
+                "label": "95% Upper credible interval for modelled estimate of the number of people testing positive for COVID-19"
+
             }
         }
     }
