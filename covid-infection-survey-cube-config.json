@@ -6,6 +6,10 @@
     "creator": "https://www.gov.uk/government/organisations/office-for-national-statistics",
     "publisher": "https://www.gov.uk/government/organisations/office-for-national-statistics",
     "dataset_issued": "2023-01-13",
+    "source_data": {
+        "file_path": "/Users/abdulkasim/Documents/data_ingestion_projects/reconcile/20230113covid19infectionsurveydatasetengland_sheet1a.csv",
+        "file_encoding": "utf-8"
+    },
     "columns": {
         "week": {
             "from_template": "week"
@@ -20,6 +24,8 @@
                     {
                         "label": "E92000001",
                         "notation": "E92000001",
+                        "description": "ONS Geography Code",
+                        "uri_safe_identifier_override": "E92000001",
                         "same_as": "http://statistics.data.gov.uk/id/statistical-geography/E92000001"
                     }
                 ]
@@ -30,7 +36,7 @@
             "data_type": "decimal",
             "unit": {
                 "label": "Percent",
-                "from_existing": "http://qudt.org/vocab/unit/PERCENT", 
+                "from_existing": "http://qudt.org/vocab/unit/PERCENT",
                 "quantity_kind": "http://qudt.org/vocab/quantitykind/Incidence"
             },
             "measure": {
@@ -66,8 +72,7 @@
             "data_type": "int",
             "unit": {
                 "label": "Number",
-                "from_existing": "http://qudt.org/vocab/unit/NUM",
-                "quantity_kind": "http://qudt.org/vocab/quantitykind/Population"
+                "from_existing": "http://qudt.org/vocab/unit/NUM"
             },
             "measure": {
                 "label": "Modelled estimate of the number of people testing positive for COVID-19"
@@ -78,8 +83,7 @@
             "data_type": "int",
             "unit": {
                 "label": "Number",
-                "from_existing": "http://qudt.org/vocab/unit/NUM",
-                "quantity_kind": "http://qudt.org/vocab/quantitykind/Population"
+                "from_existing": "http://qudt.org/vocab/unit/NUM"
             },
             "measure": {
                 "label": "95% Lower credible interval for modelled estimate of the number of people testing positive for COVID-19"
@@ -90,12 +94,10 @@
             "data_type": "int",
             "unit": {
                 "label": "Number",
-                "from_existing": "http://qudt.org/vocab/unit/NUM",
-                "quantity_kind": "http://qudt.org/vocab/quantitykind/Population"
+                "from_existing": "http://qudt.org/vocab/unit/NUM"
             },
             "measure": {
                 "label": "95% Upper credible interval for modelled estimate of the number of people testing positive for COVID-19"
-
             }
         }
     }
