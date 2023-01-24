@@ -6,17 +6,13 @@
     "creator": "https://www.gov.uk/government/organisations/office-for-national-statistics",
     "publisher": "https://www.gov.uk/government/organisations/office-for-national-statistics",
     "dataset_issued": "2023-01-13",
-    "source_data": {
-        "file_path": "/Users/abdulkasim/Documents/data_ingestion_projects/reconcile/20230113covid19infectionsurveydatasetengland_sheet1a.csv",
-        "file_encoding": "utf-8"
-    },
     "columns": {
         "week": {
             "from_template": "week"
         },
         "ons_geog_code": {
             "type": "dimension",
-            "label": "ons_geog_code",
+            "label": "Geography",
             "code_list": {
                 "title": "ons_geog_code",
                 "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
